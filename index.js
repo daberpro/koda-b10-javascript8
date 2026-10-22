@@ -33,7 +33,16 @@ function outputNamaQueue() {
 
 const [q1,q2,q3] = outputNamaQueue();
 
-q1.then(console.log).catch(console.log);
-q2.then(console.log).catch(console.log);
-q3.then(console.log).catch(console.log);
+q1.then((name)=>{
+    console.log(name);
+    return q2;
+})
+.then((name)=>{
+    console.log(name);
+    return q3;
+})
+.then((name)=>{
+    console.log(name);
+})
+.catch(console.log)
 
